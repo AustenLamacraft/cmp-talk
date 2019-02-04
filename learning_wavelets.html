@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <title>Learning Wavelets</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="reveal.js/css/reveal.css">
+  <style type="text/css">code{white-space: pre;}</style>
+  <link rel="stylesheet" href="reveal.js/css/theme/blotter.css" id="theme">
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal.js/css/print/pdf.css' : 'reveal.js/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="reveal.js/lib/js/html5shiv.js"></script>
+  <![endif]-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.6.0/katex.min.js"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.6.0/katex.min.css" /><script type="text/javascript">window.onload = function(){var mathElements = document.getElementsByClassName("math");
+  for (var i=0; i < mathElements.length; i++)
+  {
+   var texText = mathElements[i].firstChild
+   katex.render(texText.data, mathElements[i])
+  }}
+  </script>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section>
+  <h1 class="title">Learning Wavelets</h1>
+</section>
+
+<section id="learning-wavelets" class="slide level1">
+<h1>Learning Wavelets</h1>
+<h3 id="austen-lamacraft-cavendish-lab">Austen Lamacraft, Cavendish Lab</h3>
+</section>
+<section id="learning-representations" class="slide level1">
+<h1>Learning Representations</h1>
+<h3 id="word-vectors">Word Vectors</h3>
+<p align="center">
+<img src="assets/wordvec.png" alt="tensors" width="600"/>
+</p>
+</section>
+<section class="slide level1">
+
+<h3 id="autoencoder">Autoencoder</h3>
+<p align="center">
+<img src="assets/autoencoder.png" alt="tensors" width="600"/>
+</p>
+<p align="center">
+Latent space (<span class="math inline">z</span>-variables) encodes inputs
+</p>
+</section>
+<section id="challenge-of-audio" class="slide level1">
+<h1>Challenge of Audio</h1>
+<p align="center">
+<img src="assets/dilate.gif" alt="tensors" width="600"/>
+</p>
+<p align="center">
+Audio CD sampling rate 44.1 kHz
+</p>
+</section>
+<section id="multiscale-methods" class="slide level1">
+<h1> Multiscale Methods</h1>
+<h3 id="example-fast-fourier-transform">Example: Fast Fourier Transform</h3>
+<p align="center">
+<img src="assets/DIT-FFT-butterfly.png" alt="tensors" width="600"/>
+</p>
+</section>
+<section class="slide level1">
+
+<h3 id="dilated-convolutions-in-deepminds-wavenet">Dilated Convolutions in DeepMind's WaveNet</h3>
+<p align="center">
+<img src="assets/wavenet.gif" alt="tensors" width="600"/>
+</p>
+</section>
+<section id="wavelets" class="slide level1">
+<h1>Wavelets</h1>
+<p align="center">
+<img src="assets/Wavelets_DWT.png" alt="tensors" width="600"/>
+</p>
+<p align="center">
+<img src="assets/Wavelets_Filter_Bank.png" alt="tensors" width="600"/>
+</p>
+<p align="center">
+<img src="assets/Wavelets_DWT_freq.png" alt="tensors" width="600"/>
+</p>
+</section>
+<section class="slide level1">
+
+<p align="center">
+<img src="assets/Daubechies4-functions.png" alt="tensors" width="600"/>
+</p>
+</section>
+<section class="slide level1">
+
+<p align="center">
+<img src="assets/Daubechies4-spectrum.png" alt="tensors" width="600"/>
+</p>
+</section>
+<section id="a-different-approach" class="slide level1">
+<h1>A Different Approach?</h1>
+<p align="center">
+<img src="assets/learn.jpeg" alt="tensors" width="600"/>
+</p>
+</section>
+<section id="some-recent-work" class="slide level1">
+<h1>Some Recent Work</h1>
+<p align="center">
+<img src="assets/recon.png" alt="tensors" width="600"/>
+</p>
+<p align="center">
+Recoskie &amp; Mann arXiv:1802.02961 [no exact reconstruction]
+</p>
+</section>
+<section id="project-structure" class="slide level1">
+<h1>Project structure</h1>
+<ul>
+<li>A simple dataset e.g. <a href="https://magenta.tensorflow.org/datasets/nsynth">Google's NSynth</a></li>
+<li>A deep learning framework (TensorFlow, PyTorch)</li>
+<li>An objective function (sparseness, perceptual similarity)</li>
+<li>Use of GPU cluster</li>
+</ul>
+</section>
+    </div>
+  </div>
+
+  <script src="reveal.js/lib/js/head.min.js"></script>
+  <script src="reveal.js/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true },
+              { src: 'reveal.js/plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+    </body>
+</html>
